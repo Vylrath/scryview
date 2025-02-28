@@ -1,0 +1,14 @@
+<ul>
+  @if (allCardSets.isLoading()) {
+    loading...
+  } @else {
+    <select [(ngModel)]="setType">
+      @for (type of setTypes(); track type) {
+        <option>{{ type }}</option>
+      }
+    </select>
+    @for (cardSet of filteredCardSets(); track cardSet.id) {
+      <li>{{ cardSet.name }}</li>
+    }
+  }
+</ul>
