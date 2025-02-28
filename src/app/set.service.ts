@@ -12,6 +12,7 @@ export class SetService {
   }
 
   getSets(): Observable<CardSet[]> {
-    return this.http.get<CardSetResponse>('https://api.scryfall.com/sets').pipe(map(res => res.data));
+    return this.http.get<CardSetResponse>('https://api.scryfall.com/sets')
+      .pipe(map(res => res.data));
   }
 }
